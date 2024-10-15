@@ -4,12 +4,15 @@
         <title>Bob's blog</title>
     </head>
     <body>
+        <header>
         <h1>This is a blog</h1>
-        <article>It works!
-            <h2>First post</h2>
-            <p>adlkj asdflkjlaks jlkasjdflkj
-                laksjdflkjas
-            </p>
+        </header>
+        {% for post in posts %}
+        <article>
+            <time>published: {{ post.published_date}}</time>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
         </article>
+        {% endfor %}
     </body>
 </html>
